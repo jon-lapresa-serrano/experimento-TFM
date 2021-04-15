@@ -16,8 +16,7 @@ library(shiny)
 library(jspsychr)
 library(dplyr)
 
-base_dir <- "/Users/jonla/Desktop/stroop_JLS"
-# base_dir <- "/Users/au183362/Documents/postdoc/NeDComm/interns/Jon_Lapresa-Serrano/stroop_JLS"
+base_dir <- "/srv/shiny-server/experimento-TFM"
 jspsych_dir <- file.path(base_dir, "jspsych-6-2")
 
 write_to_file <- function(json_object,file_name,var_name=NULL){
@@ -540,4 +539,4 @@ exp <- make_test(
                         css = file.path(jspsych_dir, "css/jspsych.css")
        )))
 
-shiny::runApp(exp)
+# shiny::runApp(exp)
