@@ -539,4 +539,4 @@ exp <- make_test(
                         css = file.path(jspsych_dir, "css/jspsych.css")
        )))
 
-# shiny::runApp(exp)
+# shiny::runApp(".")
