@@ -74,7 +74,7 @@ stroop_stim <- data.frame( stimulus = length(54*3),
                            id = "stroop_stim",
                            fontsize = "60pt",
                            lineheight = "normal") %>%
-  mutate(stim_type = recode(stim_type, '1' = "gender_masc", '2' = "gender_neut", '3' = "gender_col", '4' = "control_lemma", '5' = "control_der", '6' = "control_sing"))
+  mutate(stim_type = recode(stim_type, '1' = "gender_masc", '2' = "gender_neut", '3' = "gender_coll", '4' = "control_masc", '5' = "control_neut", '6' = "control_coll"))
 
 stroop_prac_stim <- data.frame( stimulus = length(3*5),
                                 word = rep(c("EJEMPLO", "EL EJEMPLO", "LOS EJEMPLOS"), each=5),
