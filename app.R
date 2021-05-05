@@ -17,7 +17,7 @@ library(jspsychr)
 library(dplyr)
 
 base_dir <- "/srv/shiny-server/experimento-TFM"
-jspsych_dir <- file.path(base_dir, "jspsych-6-2")
+jspsych_dir <- file.path(base_dir, "jspsych-6-3-1")
 
 write_to_file <- function(json_object,file_name,var_name=NULL){
   OS_type = .Platform
@@ -221,25 +221,6 @@ head <- tags$head(
 )
 
 #########
-
-##Greek
-ui_greek <- tags$div(
-  head,
-  includeScript(file.path(base_dir, "greek-timeline.js")),
-  # includeScript(file.path(base_dir, "run-jspsych_full.js")),
-  includeScript(file.path(base_dir, "run-jspsych.js")),
-  tags$div(id = "js_psych", style = "min-height: 90vh")
-)
-
-stroop_greek <- page(
-  ui = ui_greek,
-  label = "stroop_greek",
-  get_answer = function(input, ...)
-    input$jspsych_results,
-  validate = function(answer, ...)
-    nchar(answer) > 0L,
-  save_answer = TRUE
-)
 
 ##Intro
 ui_intro <- tags$div(
@@ -528,7 +509,7 @@ exp <- make_test(
                       enable_admin_panel=TRUE,
                       languages="es",
                       researcher_email="201902476@post.au.dk",
-                      # problems_info="?Tiene problemas con el experimento? Env?e un email a 201902476@post.au.dk",
+                      # problems_info="¿Tiene problemas con el experimento? Envíe un email a 201902476@post.au.dk",
                       display = display_options(
                         full_screen = TRUE,
                         # content_border = "0px",
