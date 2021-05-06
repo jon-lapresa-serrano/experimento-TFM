@@ -42,12 +42,12 @@ write_to_file <- function(json_object,file_name,var_name=NULL){
 
 # create dataframe to define stimuli
 # setting up a list of the possible response key configurations
-resps = list(c("ArrowLeft","ArrowUp","ArrowRight"),
-             c("ArrowLeft","ArrowRight","ArrowUp"),
-             c("ArrowUp","ArrowLeft","ArrowRight"),
-             c("ArrowRight","ArrowLeft","ArrowUp"),
-             c("ArrowUp","ArrowRight","ArrowLeft"),
-             c("ArrowRight","ArrowUp","ArrowLeft"))
+resps = list(c("arrowleft","arrowup","arrowright"),
+             c("arrowleft","arrowright","arrowup"),
+             c("arrowup","arrowleft","arrowright"),
+             c("arrowtight","arrowleft","arrowup"),
+             c("arrowup","arrowright","arrowleft"),
+             c("arrowright","arrowup","arrowleft"))
 # randomizing the selection of response key configuration
 rand_resp = sample(1:length(resps))
 response_config = resps[[rand_resp[1]]]
@@ -120,7 +120,7 @@ write_to_file(stimulus_json, paste0(base_dir, "/test_stimuli.js"), "test_stimuli
 write_to_file(stimulus_prac_json, paste0(base_dir, "/prac_stimuli.js"), "prac_stimuli")
 
 
-names_arrow <- setNames(c('&#x2190', '&#x2191', '&#x2192'), c('ArrowLeft', 'ArrowUp', 'ArrowRight'))
+names_arrow <- setNames(c('&#x2190', '&#x2191', '&#x2192'), c('arrowleft', 'arrowup', 'arrowright'))
 red_style=paste0("<span style='color:red;font-size:24pt;line-height:normal'>", names_arrow[response_config[1]], " (rojo)</span>")
 green_style=paste0("<span style='color:green;font-size:24pt;line-height:normal'>", names_arrow[response_config[2]], " (verde)</span>")
 blue_style=paste0("<span style='color:blue;font-size:24pt;line-height:normal'>", names_arrow[response_config[3]], " (azul)</span>")
