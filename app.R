@@ -68,7 +68,7 @@ stim = c(stim1, stim2, stim3, stim4, stim5, stim6, stim7, stim8, stim9)
 stroop_stim <- data.frame( stimulus = length(54*3),
                            word = rep(stim, each=3),
                            color = rep(c("red","green","blue"), 54),
-                           response = rep(response_config, 54),
+                           key = rep(response_config, 54),
                            resp_config = rep(rand_resp[[1]], 54*3),
                            stim_type = rep(c("1", "2", "3", "4", "5", "6"), each=9*3), 
                            id = "stroop_stim",
@@ -79,7 +79,7 @@ stroop_stim <- data.frame( stimulus = length(54*3),
 stroop_prac_stim <- data.frame( stimulus = length(3*5),
                                 word = rep(c("EJEMPLO", "EL EJEMPLO", "LOS EJEMPLOS"), each=5),
                                 color = rep(c("red","green","blue"), 5),
-                                response = rep(response_config, 5),
+                                key = rep(response_config, 5),
                                 resp_config = rep(rand_resp[[1]], 5),
                                 id = "stroop_pract_stim",
                                 fontsize = "60pt",
@@ -107,11 +107,11 @@ stroop_prac_stim$stimulus <- html_stimulus(df = stroop_prac_stim,
 # create json object from dataframe
 stimulus_json <- stimulus_df_to_json(df = stroop_stim,
                                      stimulus = "stimulus",
-                                     data = c("word","color","response","stim_type"))
+                                     data = c("word","color","key","stim_type"))
 
 stimulus_prac_json <- stimulus_df_to_json(df = stroop_prac_stim,
                                           stimulus = "stimulus",
-                                          data = c("word","color","response"))
+                                          data = c("word","color","key"))
 
 # write json object to script
 # write_to_script(stimulus_json,"test_stimuli")
