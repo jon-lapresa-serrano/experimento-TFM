@@ -10,12 +10,8 @@ function new_timeline() {
       data: jsPsych.timelineVariable('data'),
       on_finish: function(data){
         var correct = false;
-        if(data.key == 'ArrowLeft' &&  data.response == 37 && data.rt > -1){
-          correct = true;
-        } else if(data.key == 'ArrowUp' &&  data.response == 38 && data.rt > -1){
-          correct = true;
-        } else if(data.key == 'ArrowRight' &&  data.response == 39 && data.rt > -1){
-          correct = true;
+        if(data.key == data.response && data.rt > -1){
+          correct = true
         }
         data.correct = correct;
       },
