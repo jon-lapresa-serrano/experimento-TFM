@@ -3,18 +3,18 @@ function new_timeline() {
   var test = {
     timeline: [{
       type: 'html-keyboard-response',
-      choices: ["leftarrow","uparrow","rightarrow"],
+      choices: ["ArrowLeft","ArrowUp","ArrowRight"],
       trial_duration: 2000,
       response_ends_trial: true,
       stimulus: jsPsych.timelineVariable('stimulus'),
       data: jsPsych.timelineVariable('data'),
       on_finish: function(data){
         var correct = false;
-        if(data.response == 'leftarrow' &&  data.key_press == 37 && data.rt > -1){
+        if(data.response == 'ArrowLeft' &&  data.key_press == 37 && data.rt > -1){
           correct = true;
-        } else if(data.response == 'uparrow' &&  data.key_press == 38 && data.rt > -1){
+        } else if(data.response == 'ArrowUp' &&  data.key_press == 38 && data.rt > -1){
           correct = true;
-        } else if(data.response == 'rightarrow' &&  data.key_press == 39 && data.rt > -1){
+        } else if(data.response == 'ArrowRight' &&  data.key_press == 39 && data.rt > -1){
           correct = true;
         }
         data.correct = correct;
