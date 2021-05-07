@@ -3,7 +3,7 @@ function new_timeline() {
   var test = {
     timeline: [{
       type: 'html-keyboard-response',
-      choices: ["ArrowLeft","ArrowUp","ArrowRight"],
+      choices: ["arrowleft","arrowup","arrowright"],
       trial_duration: 2000,
       response_ends_trial: true,
       stimulus: jsPsych.timelineVariable('stimulus'),
