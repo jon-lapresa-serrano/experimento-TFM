@@ -11,7 +11,7 @@ function new_timeline() {
       on_finish: function(data){
         var correct = false;
         if(data.key == data.response && data.rt > -1){
-          correct = true
+          correct = true;
         }
         data.correct = correct;
       },
