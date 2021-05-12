@@ -45,7 +45,7 @@ write_to_file <- function(json_object,file_name,var_name=NULL){
 resps = list(c("arrowleft","arrowup","arrowright"),
              c("arrowleft","arrowright","arrowup"),
              c("arrowup","arrowleft","arrowright"),
-             c("arrowtight","arrowleft","arrowup"),
+             c("arrowright","arrowleft","arrowup"),
              c("arrowup","arrowright","arrowleft"),
              c("arrowright","arrowup","arrowleft"))
 # randomizing the selection of response key configuration
